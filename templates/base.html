@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inua collective society</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    
+
+</head>
+<body>
+    <header>
+        <img class="logo" src="{% static 'images/inua_logo.png' %}">
+        <h2 class="logo-head">
+            INUA 
+        </br>
+            COLLECTIVE 
+        </br>
+            SOCIETY
+        </h2>
+        <div class=" bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Programs</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="#">Youth Empowerment, Mentorship and Welness</a></li>
+                        <li><a href="#">Community Advocacy, Empowerment and Development</a></li>
+                        <li><a href="#">Arts, Sports and Culture Development</a></li>
+                    </ul>   
+                </div>
+            </li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Board Members</a></li>
+            <li><a href="#">Gallery</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="#">Youth Empowerment, Mentorship and Welnes Gallery</a></li>
+                        <li><a href="#">Community Advocacy, Empowerment and Development Gallery</a></li>
+                        <li><a href="#">Arts, Sports and Culture Development Gallery</a></li>
+                    </ul>      
+                </div>
+            </li>
+            <li><a href="{% url 'main:aboutus' %}">About Us</a></li>
+        </ul>
+    </header>
+    {% block content %}
+    {% endblock %}      
+    <footer>
+        <div class="footer-container">
+            <div class="left-footer">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>9343-149 st</span>
+                    Surrey BC</p>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p><span>+604 616 5717</span>236-558-8300</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="inuacollective@gmail.com"></a>inuacollective@gmail.com</p>
+                </div>
+                <div>
+                    <i class="fa fa-cell"></i>
+                </div>
+            </div>
+            <div class="right-footer">
+                <div class="follow-us">
+                    <h3 >
+                        Connect with Us
+                    </h3>
+                </div>
+                
+                <div class="socials-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-tiktok"></i></a>
+                    <a href="#"><i class="fa fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div> 
+        <div class="footer-bottom">
+            <p>Copyright &copy;2023; <span class="designer">INUA COLLECTIVE SOCIETY</span></p>
+        </div>    
+        <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
