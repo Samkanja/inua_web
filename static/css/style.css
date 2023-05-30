@@ -1,0 +1,371 @@
+*{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+body {
+    background: #dee0e3;
+}
+/* header begins here */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 15%;
+    background-color: rgb(235, 196, 124);
+    margin-bottom: 10px;
+
+}
+.logo {
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.logo-head{
+    color:white;
+    font-size: 24px;
+    font-weight: 700;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.navbar {
+    display: flex;
+}
+.navbar a{
+    color: black;  
+    
+}
+.navbar li{
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    color: red;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+.navbar li:hover {
+    background:lightblue;
+    border-radius: 5px;
+
+}
+#menu-icon {
+    font-size: 30px;
+    z-index: 10001;
+    color: black;
+    cursor: pointer;
+    display: none;
+}
+/* sub-header begins here */
+
+.sub-menu-1{
+    display: none;
+}
+.navbar li:hover .sub-menu-1 {
+    display: block;
+    position: absolute;
+    background:lightblue;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.navbar li:hover .sub-menu-1 ul {
+    display: block;
+    margin: 10px;
+}
+.navbar li:hover .sub-menu-1 ul li {
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+.navbar li:hover .sub-menu-1 ul li:last-child {
+    border-bottom: none;
+}
+.navbar li:hover .sub-menu-1 ul li a:hover {
+    color: orange;
+}
+
+
+/* sub-header ends here */
+/* header ends here */
+
+/* about-us extra begin here */
+section {
+    margin-top: 180px;
+    background-color:#dee0e3;
+
+}
+.about-us-body {
+    display: flex;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+} 
+.about-us-body img {
+    flex: 0 50%;
+    max-width: 50%;
+    height: auto;
+}
+.about-content {
+    padding: 35px;
+}
+.about-content h2 {
+    color: #36455c;
+    font-size: 24px;
+    margin: 15px 0px;
+}
+.about-content p{
+    color:#666;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 15px 0px;
+}
+.aboutus-more-btn {
+    display: inline-block;
+    color: #fff;
+    background-color: #0084ff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.aboutus-more-btn  a{
+    text-decoration: none;
+}
+.aboutus-more-btn:hover {
+    background-color: #006dd6;
+}
+
+/* about-us extra end here */
+
+/* about page begins here */
+
+.about-us-heading {
+    text-align: center;
+    margin-top: 5px;
+}
+.about-us-heading h1 {
+    font-size: 50px;
+    color: #36455c;
+    margin-bottom: 10px;
+}
+.about-us-heading p {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 50px;
+}
+.about-us-main-body {
+    display: flex;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+}
+.about-us-main-body img {
+    flex: 0 50%;
+    max-width: 50%;
+    height: auto;
+}
+.about-us-main-content {
+    padding: 35px;
+}
+.about-us-main-content h2 {
+    color: #36455c;
+    font-size: 24px;
+    margin: 15px 0px;
+}
+.about-us-main-content p{
+    color:#666;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 15px 0px;
+}
+.container {
+    text-align: center;
+    margin: auto;
+    padding: 48px 0; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.vision ,.mission,.core-values {
+    margin: 10px;
+    padding: 22px;
+    max-width: 30%;
+    box-sizing: border-box;
+}
+.vision img, .mission img , .core-values img {
+    width: 200px;
+    height: 200px;
+
+}
+.vision-name,.mission-name,.core-values-name {
+    padding: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.about-vision, .about-mission, .about-corevalues {
+    margin: 20px 0;
+    font-weight: lighter;
+    color: #4e4e4e;
+}
+.about-corevalues ul li {
+    text-decoration: none;
+    list-style: none;
+
+}
+/* about page ends here */
+
+
+/* footer begins here */
+
+footer {
+    background-color: rgb(235, 196, 124);
+    /* margin-left: 5px; */
+    margin-top: 200px;
+}
+.footer-container {
+    width: 100%;
+    padding: 50px 50px 60px 50px;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: left;
+
+}
+.left-footer {
+    width: 35%;
+}
+.left-footer i {
+    /* background-color:li; */
+    color: black;
+    font-size: 25px;
+    width: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align:middle ;
+    display: inline-block;
+}
+.left-footer i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+}
+.left-footer p {
+    display: inline-block;
+    color: black;
+    vertical-align: middle;
+    margin: 0;
+}
+.left-footer p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+.left-footer p a {
+    color: #e0ac1c;
+    text-decoration: none;
+    
+}
+.left-footer , .right-footer {
+    display: inline-block;
+    vertical-align: top;
+}
+.follow-us {
+    line-height: 20px;
+    color:black;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: inline-block;
+    text-align: center;
+}
+.right-footer {
+    width: 30%;
+}
+.socials-icons {
+    margin-top: 25px;
+}
+.socials-icons a {
+    display: inline-block;
+    
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    color: black;
+    background-color:rgb(235, 196, 124);
+    text-align: center;
+    line-height: 35px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+.footer-bottom {
+    margin-top: 10px;
+    background-color: black;
+    padding:20px;
+    text-align: center;
+
+
+}
+.footer-bottom p{
+    color: white;
+}
+.designer {
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+
+
+@media (max-width: 1400px) {
+    header {
+        padding: 12px 3%;
+        transition: .2s;
+    }
+    #menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: -800px;
+        /* top: 100px; */
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background: oldlace;
+        transition: all .50s ease;
+        text-align: left;
+    }
+    .navbar a {
+        display: block;
+        padding: 1rem;
+        margin: 0.8rem;
+    }
+    .navbar.open {
+        top: 100%;
+    }
+    .left-footer, .right-footer {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+}

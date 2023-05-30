@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<section>
+    {% for about in aboutus %}
+    <div class="about-us-heading">
+        <h1>About Us</h1>
+        <p>INUA COLLECTIVE  SOCIETY</p>
+    </div>  
+     
+    <div class="about-us-main-body">
+        <img src="{% static 'images/about_us.jpg' %}">
+       
+        <div class="about-us-main-content">
+            <h2>INUA COLLECTIVE SOCIETY</h2>
+            <p>{{ about.description }}</p>
+        </div>   
+    </div>
+    <div class="container">
+        <div class="mission">
+            <img src="{% static 'images/icons8-goal-50.png' %}">
+            <div class="mission-name">
+                <h2>MISSION</h2>
+            </div>
+            <div class="about-mission">
+                <p>{{ about.mission}}</p>
+            </div>
+        </div>
+        <div class="vision">
+            <img src="{% static 'images/icons8-vision-64.png' %}">
+            <div class="vision-name">
+                <h2>VISION</h2>
+            </div>
+            <div class="about-vision">
+                <p>{{ about.vision}}</p>
+            </div>
+        </div>
+        <div class="core-values">
+         
+            <img src="{% static 'images/icons8-diamonds-64 (1).png' %}">
+            <div class="core-values-name" >
+                <h2>CORE VALUES</h2>
+            </div>
+            <div class="about-corevalues">
+                <ul>
+                    <li>Innovation</li>
+                    <li>Integrity</li>
+                    <li>Dignity</li>
+                    <li>Partnership & Collaborations</li>
+                    <li>Inclusic</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>   
+    {% endfor %}
+</section> 
+
+{% endblock %}
