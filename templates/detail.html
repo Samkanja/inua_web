@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'about.html' %}
+    <h1 class="programs-c">Activities For {{ program.title }} Program</h1>
+    <div class="programs-dv">
+        {% for activity in activities %}
+            <div class="program">
+                <h4>{{ activity.title }}</h4>
+                <img class="program-img" src="{% if activity.image %}{{ activity.image.url }}{% endif %}">
+                <p>{{ activity.description|linebreaks }}</p>
+
+            </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}

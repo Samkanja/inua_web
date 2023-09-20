@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section>
+    {% for about in aboutus %}
+    <div class="about-us-heading">
+        <h1>About Us</h1>
+        <p>INUA COLLECTIVE  SOCIETY</p>
+    </div>  
+    <div class="about-heading-new">
+        <section class="about-new">
+            <div class="about-new-image">
+                <img src="{% static 'images/about_us.jpg' %}">
+            </div>
+            <div class="about-content-new">
+                <h2>INUA COLLECTIVE SOCIETY</h2>
+                <p>{{ about.description }}</p> 
+            </div>
+        </section>
+    </div>
+
+    <div class="mission-vision-corevalues">
+        <div class="mission-heading-new">
+            <section class="mission-content-section">
+                <div class="mission-image">
+                    <img src="{% static 'images/icons8-goal-50.png' %}">
+                </div>
+                
+                <div class="mission-content">
+                    <h2>MISSION</h2>
+                    <p>{{ about.mission }}</p>
+                </div>
+                
+            </section>
+        </div>
+    
+        <div class="vision-heading-new">
+            <section class="vision-content-section">
+                <div class="vision-image">
+                    <img src="{% static 'images/icons8-vision-64.png' %}">
+                </div>  
+                <div class="vision-content">
+                    <h2>VISION</h2>
+                    <p>{{ about.vision }}</p>
+                </div>      
+            </section>
+        </div>
+        <div class="core-values-heading-new">
+            <section class="core-values-content-section">
+                <div class="core-values-image">
+                    <img src="{% static 'images/icons8-diamonds-64 (1).png' %}">
+                </div>
+            </section>
+            <div class="core-values-content">
+                <h2>CORE VALUES</h2>
+                <ul>
+                    <li>Innovation</li>
+                    <li>Integrity</li>
+                    <li>Dignity</li>
+                    <li>Partnership & Collaborations</li>
+                    <li>Inclusic</li>
+                    
+                </ul>
+
+            </div>
+        </div> 
+    </div>
+    
+
+    </div>   
+    {% endfor %}
+</section> 
+
+{% endblock %}

@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="x-icon" href="{% static 'images/Group logo.png' %}">
+    <!-- Box Icon css -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    {% if title %}
+    <title> {{title}} - page </title>
+    {% else %}
+    <title>Inua Collective Society</title>
+    {% endif %}
+</head>
+<body>
+
+
+    {% include 'navbar.html' %}
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <div class="footer-container">
+            <div class="left-footer">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>9343-149 st</span>
+                    Surrey BC</p>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p><span>+604 616 5717</span>236-558-8300</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="inuacollective@gmail.com"></a>inuacollective@gmail.com</p>
+                </div>
+                <div>
+                    <i class="fa fa-cell"></i>
+                </div>
+            </div>
+            <div class="right-footer">
+                <div class="follow-us">
+                    <h3 >
+                        Connect with Us
+                    </h3>
+                </div>
+                <div class="socials-icons">
+                    
+                    <a href="#" title="Youtube">
+						<img src="{% static 'icons/youtube.svg' %}" alt="Youtube" />
+					</a>
+                    <a href="#" title="Threads">
+						<img src="{% static 'icons/threads.svg' %}" alt="Youtube" />
+					</a>
+                    <a href="#" title="Instagram">
+						<img src="{% static 'icons/instagram.svg' %}" alt="Youtube" />
+					</a>
+                    <a href="#" title="Twitter">
+						<img src="{% static 'icons/twitter.svg' %}" alt="Youtube" />
+					</a>
+                    <a href="#" title="Linkedin">
+						<img src="{% static 'icons/linkedin.svg' %}" alt="Youtube" />
+					</a>
+
+                    
+                    
+                </div>    
+            </div>
+        </div> 
+    </footer>
+    <div class="footer-bottom">
+        <p>Copyright &copy;2023; <span class="designer">INUA COLLECTIVE SOCIETY</span></p>
+    </div>  
+
+    
+    
+    <!-- JavaScript Link -->
+    <script src="{% static 'js/script.js' %}"></script>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'about.html' %}
+<h2 class="program-c">Programs</h2>
+<div class="programs-dv">
+    
+    {% for program in programs %}
+   
+    <div class="program">
+        <h4>{{ program.title }}</h4>
+
+            <img class="program-img" src="{% if program.image %}{{ program.image.url }}{% endif %}">
+        <p>{{ program.description|linebreaks }}</p>
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

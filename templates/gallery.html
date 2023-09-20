@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'about.html' %}
+<h2 class="program-c">Gallery</h2>
+<div class="programs-dv">
+    
+    {% for gallery in galleries %}
+   
+    <div class="program">   
+            <img class="program-img" src="{% if gallery.image %}{{ gallery.image.url }}{% endif %}">
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
