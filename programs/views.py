@@ -1,10 +1,12 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Program,AboutUs,Activity,BoardMember,Gallery
+from .models import Program,AboutUs,Activity,BoardMember,Gallery,GalleryImage
 from django.views.generic  import ListView, CreateView, TemplateView,View
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
-from .forms import ProgramForm
+from .forms import ProgramForm,GalleryForm
+from django.contrib.auth.decorators import login_required
+
 
 class Home(TemplateView):
     template_name = 'admin/home.html'
@@ -79,7 +81,50 @@ class ActivityDetailView(DetailView):
         program = self.object
         context['activities'] = program.activity_set.all()
         return context 
+
+
+class GalleryCreateView(CreateView):
+    model = Gallery
+    template_name = 'admin/photo.html'
+    form_class = GalleryForm
+    success_url = reverse_lazy('inua:homepage')
+
+    def form_valid(self,form):
+        form.instance.admin = self.request.user
+        return super().form_valid(form)
     
+
+@login_required(login_url='login')
+def addPhoto(request):
+    user = request.user
+
+    galleries = user.gallery_set.all()
+
+    if request.method == 'POST':
+        data = request.POST
+        images = request.FILES.getlist('images')
+
+        
+        gallery =Gallery.objects.get(public_id=data['gallery'])
+        
+           
+
+        for image in images:
+            photo = GalleryImage.objects.create(
+                gallery=gallery,
+                description=data['description'],
+                image=image,
+            )
+
+        return redirect('gallery')
+
+    context = {'galleries': galleries}
+    return render(request, 'admin/add.html', context)
+
+
+
+    
+
 class AddPhotoView(LoginRequiredMixin, View):
     login_url = 'login'  # Replace with the URL for your login page
     redirect_field_name = 'next'

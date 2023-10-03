@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import ( HomePageView,AboutUsViewPage,ActivityDetailView, 
                     ProgramCreateView,Home,ActivityCreateView,
-                    AboutUsCreateView,AddPhotoView, GalleryViewPage)
+                    AboutUsCreateView,AddPhotoView,GalleryCreateView,GalleryViewPage,addPhoto)
 
 app_name = 'inua'
 
@@ -13,8 +13,7 @@ urlpatterns = [
     path('inua/programs/',ProgramCreateView.as_view(),name='programs'),
     path('inua/activity/',ActivityCreateView.as_view(),name='activity-create'),
     path('<uuid:public_id>/activities/',ActivityDetailView.as_view(),name='activity'),
-    path('inua/gallery/',AddPhotoView.as_view(), name='gallery-add'),
-    path('gallery/',GalleryViewPage.as_view(),name='gallery'),
-
-    
+    path('inua/photo/',GalleryCreateView.as_view(),name='create-gallery'),
+    path('inua/gallery/',addPhoto, name='gallery-add'),
+    path('gallery/',GalleryViewPage.as_view(),name='gallery'),   
 ]
