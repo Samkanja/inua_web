@@ -146,5 +146,5 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 LOGIN_REDIRECT_URL = 'inua:programs'
 
-LOGIN_URL = 'user:login'
+LOGIN_URL = 'users:login'
 

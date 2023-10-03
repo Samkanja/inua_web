@@ -13,3 +13,21 @@ const showMenu = (toggleId, navId) =>{
  }
  
  showMenu('nav-toggle','nav-menu')
+
+
+// =================== HOME PAGE ================
+
+const programItems = document.querySelectorAll(".program-items")
+const indicators = document.querySelectorAll(".indicator .dot")
+
+function eventHandler(index) {
+    programItems.forEach((item, i) => {
+        item.classList.remove("active")
+        indicators[i].classList.remove('active')
+
+    })
+}
+programItems.forEach((item, i) => {
+    item.addEventListener('click', () => eventHandler(i))
+    indicators[i].addEventListener("click", () => eventHandler(i))
+})

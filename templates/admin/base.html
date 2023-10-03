@@ -44,24 +44,24 @@
             <!-- =============== NAV MENU ============== -->
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li><a href="{% url 'inua:homepage' %}" class="nav__link">HOME</a></li>
+                    <li><a href="{% url 'inua:programs' %}" class="nav__link">HOME</a></li>
                     <li class="dropdown__item">
                        <div class="nav__link">
                         PROGRAM <i class='bx bx-chevron-down dropdown__arrow'></i>
                        </div>
                        <ul class="dropdown__menu">
                             <li>
-                                <a href="" class="dropdown__link">
+                                <a href="{% url 'inua:activity-create' %}" class="dropdown__link">
                                     YOUTH EMPOWERMENT, MENTORSHIP & WELNESS
                                 </a>
                             </li>
                             <li>
-                                <a href="" class="dropdown__link">
+                                <a href="{% url 'inua:activity-create' %}" class="dropdown__link">
                                     COMMUNITY ADVOCACY, EMPOWERMENT & DEVELOPMENT
                                 </a>
                             </li>
                             <li>
-                                <a href="" class="dropdown__link">
+                                <a href="{% url 'inua:activity-create' %}" class="dropdown__link">
                                     ARTS, SPORTS & CULTURE DEVELOPMENT
                                 </a>
                             </li>
@@ -69,7 +69,7 @@
                     </li>
                     <li><a href="" class="nav__link">EVENTS</a></li>
                     <li><a href="" class="nav__link">BOARD MEMBERS</a></li>
-                    <li><a href="{% url 'inua:gallery-add' %}" class="nav__link">GALLERY</a></li>
+                    <li><a href="{% url 'inua:create-gallery' %}" class="nav__link">GALLERY</a></li>
                     <li><a href="{% url 'inua:aboutus-create' %}" class="nav__link">ABOUT US</a></li>
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'users:logout' %}" class="nav__link">LOGOUT</a></li>
