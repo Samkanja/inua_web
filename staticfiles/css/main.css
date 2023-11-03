@@ -1,5 +1,5 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -45,6 +45,7 @@ body {
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
+    height: 100vh;
 }
 ul {
     list-style: none;
@@ -99,7 +100,6 @@ a {
 }
 .nav__logo img{
     width: 40%;
-
 }
 
 .nav__toggle {
@@ -292,10 +292,99 @@ a {
     }
     .nav__logo img {
         width: 35%;
+        background-image: none;
     }
 
 }
 /* end of navbar */
+
+
+/* ==============Home ============= */
+.program-heading {
+    font-size: 50px;
+    color: #000;
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+.programs-dv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 40px;
+    margin-left: 5px;
+    /* background-image: linear-gradient(rgba(250, 247, 247, 0.6),rgba(252, 252, 252, 0.6)),url(../images/motivating_factors-removebg-preview.png); */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+@media (max-width: 750px) {
+    .programs-dv {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+@media (max-width:600px) {
+    .programs-dv {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.program-img {
+    width: 100%;
+    background-image: none;
+}
+.program h4{
+    font-size: 17px;
+    color: #36455c;
+}
+.program p{
+    margin-top: 10px;
+    color:#666;
+
+}
+.program-c{
+    margin-left: 5px;
+    color:black;
+}
+
+
+/* ====================Gallery================== */
+.gallery-img {
+    width: 100%;
+    background-image: none;
+    position: relative;
+}
+.gallery-event {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #36455c;
+
+}
+.program a{
+    text-decoration: none;
+    color: green;
+    border-radius: 40%;
+    display: inline-block;
+
+}
+
+
+/* =======================Gallery Image================== */
+.img-container {
+    width: 95%;
+
+}
+.slides {
+    width: 70%;
+    margin: 10px auto;
+}
+.slides img{
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+}
 
 /* footer begins here */
 
@@ -304,7 +393,7 @@ footer {
     background-color:darkorange;
     /* background:linear-gradient(45deg,rgb(248, 184, 65),rgb(252, 114, 114),rgb(253, 205, 116)); */
     /* margin-left: 5px; */
-    margin-top: 200px;
+    margin-top: 100px;
 }
 .footer-container {
     width: 100%;
@@ -605,50 +694,5 @@ footer {
         font-size: 16px;
     }
 
-}
-
-/* ==============Home ============= */
-
-.programs-dv {
-    margin-top: 2px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 20px;
-    row-gap: 40px;
-    margin-left: 5px;
-    /* background-image: linear-gradient(rgba(250, 247, 247, 0.6),rgba(252, 252, 252, 0.6)),url(../images/motivating_factors-removebg-preview.png); */
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-@media (max-width: 750px) {
-    .programs-dv {
-        grid-template-columns: 1fr 1fr;
-    }
-
-}
-@media (max-width:600px) {
-    .programs-dv {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-.program-img {
-    width: 100%;
-    background-image: none;
-}
-.program h4{
-    font-size: 17px;
-    color: #36455c;
-}
-.program p{
-    margin-top: 10px;
-    color:#666;
-
-}
-.program-c{
-    margin-left: 5px;
-    color:black;
 }
 
