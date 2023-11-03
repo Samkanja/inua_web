@@ -9,12 +9,11 @@
         {% csrf_token %}
 
         <div class="form-group m-3">
-            <label>Select a event</label>
+            <label>Select an event</label>
             <select name="gallery" class="form-control">
-                <option value='none'>Select a event...</option>
 
                 {% for gallery in galleries %}
-                <option value='{{category.public_id}}'>{{gallery.name}}</option>
+                <option value='{{ gallery.public_id }}'>{{ gallery.event }}</option>
                 {% endfor %}
             </select>
         </div>

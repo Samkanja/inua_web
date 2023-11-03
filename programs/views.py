@@ -1,3 +1,5 @@
+from django.forms.models import BaseModelForm
+from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Program,AboutUs,Activity,BoardMember,Gallery,GalleryImage
@@ -94,32 +96,58 @@ class GalleryCreateView(CreateView):
         return super().form_valid(form)
     
 
-@login_required(login_url='login')
-def addPhoto(request):
-    user = request.user
 
-    galleries = user.gallery_set.all()
+class GalleryImageCreateView(LoginRequiredMixin,View):
+    template_name = 'admin/add.html'
+    redirect_field_name = 'next'
 
-    if request.method == 'POST':
+    def post(self, request, *args, **kwargs):
         data = request.POST
         images = request.FILES.getlist('images')
-
-        
-        gallery =Gallery.objects.get(public_id=data['gallery'])
-        
-           
+        gallery = Gallery.objects.get(public_id=data['gallery'])
 
         for image in images:
             photo = GalleryImage.objects.create(
-                gallery=gallery,
-                description=data['description'],
-                image=image,
+                gallery=gallery, image=image
             )
+        return redirect('inua:homepage')
+    
+    def get(self,request,*args,**kwargs):
+        user = request.user
+        galleries = user.gallery_set.all()
+        context = {
+            'galleries' : galleries
+        }
+        return render(request, self.template_name , context) 
 
-        return redirect('gallery')
+        
 
-    context = {'galleries': galleries}
-    return render(request, 'admin/add.html', context)
+# @login_required(login_url='login')
+# def addPhoto(request):
+#     user = request.user
+
+#     galleries = user.gallery_set.all()
+
+#     if request.method == 'POST':
+#         data = request.POST
+#         images = request.FILES.getlist('images')
+
+        
+#         Program.objects.get_object_by_public_id(public_id=self.kwargs['public_id'])        
+           
+
+#         for image in images:
+#             photo = GalleryImage.objects.create(def get_absolute_url(self):
+#         return reverse('inua:activity', args=[self.public_id])
+
+#                 gallery=gallery,
+#                 image=image,
+#             )
+
+#         return redirect('gallery')
+
+#     context = {'galleries': galleries}
+#     return render(request, 'admin/add.html', context)
 
 
 
@@ -143,6 +171,21 @@ class GalleryViewPage(ListView):
     model = Gallery
     template_name = 'gallery.html'
     context_object_name = 'galleries'
+
+
+class GalleryImageDetailView(DetailView):
+    model = Gallery
+    template_name = 'galleryimage.html'
+    context_object_name = 'gallery'
+
+    def get_object(self,queryset=None):
+        return Gallery.objects.get_object_by_public_id(public_id=self.kwargs['public_id'])
+
+    def get_context_data(self,**kwargs):
+        context = super().get_context_data(**kwargs)
+        gallery = self.object
+        context['galleryimages'] = gallery.galleryimage_set.all()
+        return context 
 
 
 

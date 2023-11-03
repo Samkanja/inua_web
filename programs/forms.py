@@ -1,5 +1,6 @@
 from django import forms
-from .models import Program, Gallery
+from django.forms import ClearableFileInput
+from .models import Program, Gallery, GalleryImage
 
 class ProgramForm(forms.ModelForm):
     class Meta:
@@ -11,3 +12,13 @@ class GalleryForm(forms.ModelForm):
     class Meta:
         model = Gallery
         fields = ['event','image']
+
+
+class GalleryImageForm(forms.ModelForm):
+    class Meta:
+        model = GalleryImage
+        fields = ['image','gallery']
+        # widgets = {
+        #        'image': ClearableFileInput(attrs={'multiple': True}),
+        #    }
+  

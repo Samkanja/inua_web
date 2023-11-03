@@ -2,14 +2,13 @@
 
 {% block content %}
 {% include 'about.html' %}
-    <h1 class="programs-c"> Programs </h1>
+    <h1 class="programs-c"> Programs</h1>
     <div class="programs-dv">
         {% for program in programs %}
             <div class="program">
                 <h4>{{ program.title }}</h4>
                 <img class="program-img" src="{% if program.image %}{{ program.image.url }}{% endif %}">
                 <p>{{ program.description|linebreaks }}</p>
-
             </div>
         {% endfor %}
     </div>

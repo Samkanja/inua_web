@@ -6,8 +6,10 @@
     
     {% for gallery in galleries %}
    
-    <div class="program">   
-            <img class="program-img" src="{% if gallery.image %}{{ gallery.image.url }}{% endif %}">
+    <div class="program">
+            <h2 class="gallery-event">{{gallery.event }}</h2>
+            <img class="gallery-img" src="{% if gallery.image %}{{ gallery.image.url }}{% endif %}">
+            <a class="more-img" href="">More Images</a>
     </div>
     {% endfor %}
 </div>

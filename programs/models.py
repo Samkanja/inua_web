@@ -101,8 +101,8 @@ class Gallery(Images):
         verbose_name = 'Gallery'
         verbose_name_plural = 'Galleries'
 
-
-
+    def get_absolute_url(self):
+        return reverse('inua:galleryimage', args=[self.public_id])
 
 
 class GalleryImageManager(AbstractManager):
@@ -110,8 +110,10 @@ class GalleryImageManager(AbstractManager):
 
 class GalleryImage(Images):
     public_id = models.UUIDField(db_index=True,unique=True,default=uuid.uuid4)
-    admin = models.ForeignKey(User, on_delete=models.CASCADE)
     gallery = models.ForeignKey(Gallery, on_delete=models.CASCADE)
+    # admin = models.ForeignKey(User, on_delete=models.CASCADE)
+    objects = GalleryImageManager()
+
 
     class Meta:
         verbose_name = 'Galleryimage'
