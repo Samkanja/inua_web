@@ -1,0 +1,10 @@
+{% load widget_tweaks %}
+
+<div class="form-group">
+    {{ widget }}
+    {% for file in widget.value %}
+        {% if file %}
+            <p>{{ file.name }}</p>
+        {% endif %}
+    {% endfor %}
+</div>

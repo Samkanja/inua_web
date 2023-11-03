@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'about.html' %}
+    <!-- <h1 class="programs-c">Images For {{ gallery.event }}</h1>
+    <div class="programs-dv">
+        {% for galleryimage in galleryimages %}
+            <div class="program">    
+                <img class="program-img" src="{% if galleryimage.image %}{{ galleryimage.image.url }}{% endif %}">
+            </div>
+        {% endfor %}
+    </div> -->
+    <div class="img-container">
+        <div class="img-content">
+            {% for galleryimage in galleryimages %}
+            <div class="slides">
+                <img class="program-img" src="{% if galleryimage.image %}{{ galleryimage.image.url }}{% endif %}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>  
+{% endblock %}
