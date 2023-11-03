@@ -148,3 +148,7 @@ LOGIN_REDIRECT_URL = 'inua:programs'
 
 LOGIN_URL = 'users:login'
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://inuacollectivesociety.org/'
+]
+
